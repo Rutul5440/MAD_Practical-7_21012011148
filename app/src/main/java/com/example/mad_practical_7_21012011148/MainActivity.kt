@@ -19,13 +19,20 @@ class MainActivity : AppCompatActivity() {
         activityChange.setOnClickListener {
             Intent(this@MainActivity, YoutubeActivity::class.java).also { startActivity(it) }
         }
-
+        val myVideoView = findViewById<VideoView>(R.id.videoView)
         val mediaController = MediaController(this)
         val uri:Uri = Uri.parse("android.resource://" + packageName + "/" + R.raw.thestoryoflight)
-        val myVideoView = findViewById<VideoView>(R.id.videoView)
+        myVideoView.setMediaController(mediaController)
+        mediaController.setAnchorView(myVideoView)
         myVideoView.setVideoURI(uri)
         myVideoView.requestFocus()
         myVideoView.start()
+
+        val button = findViewById<FloatingActionButton>(R.id.activitychange)
+        button.setOnClickListener {
+            Intent(this,YoutubeActivity::class.java).apply { startActivity(this) }
+        }
+
     }
 
 }

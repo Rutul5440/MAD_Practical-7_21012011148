@@ -10,11 +10,11 @@
         android:id="@+id/changeactivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp"
         app:srcCompat="@drawable/baseline_photo_24" />
 
     <WebView
